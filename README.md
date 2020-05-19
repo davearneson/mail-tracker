@@ -10,7 +10,7 @@ This sensor uses a Wyze sense door sensor to trigger the automation when the mai
 
 I used HA’s helpers to set up an input_boolean entity and an input_datetime entity. 
 
- I created the input_boolean entity in the UI by going to Configuration/Helpers and clicking the add button, then “Toggle.” I then added a name, in my case “You’ve Got Mail”. This entity will be used to mark the mail as arrived. I didn’t want to use just the wyze door sensor, because the mailbox is typically opened and then immediately closed, so I needed a switch that would stay “on” until turned off manually or by an automated reset.
+ I created the input_boolean entity in the UI by going to Configuration/Helpers and clicking the add button, then “Toggle.” I then added a name, in my case “You’ve Got Mail”. This entity will be used to mark the mail as arrived. I didn’t want to use just the Wyze door sensor, because the mailbox is typically opened and then immediately closed, so I needed a switch that would stay “on” until turned off manually or by an automated reset.
 
 I created the input_datetime entity in the UI by going to Configuration/Helpers and clicking the add button, then “Date and/or time.” I then added a name, in my case “Mailbox Time Arrived”. This entity will be used to set the time that mail was delivered. 
 
@@ -62,7 +62,7 @@ I created three automations for the main part of this project, and I’ll do my 
 
 ## Automation Linking Wyze sensor to input_boolean entity and Sending Actionable Notification
 
-When the Wyze sensor is opened, this automation checks to make sure that a) the automation hasn’t been fired in the last 2 minutes, and b) the input_boolean entity is “off,” and if either thing is true, it turns on the input_boolean.you_ve_got_mail entity, and then sends an actionable notification (“You’ve Got Mail”) to an iOS device with the option to reset the sensor. (“It was me”). I have the conditions set so I don’t get a bunch of notifications if it opens a couple of times in a row. (Sometimes my wife and I will both check out of habit when we get home together, or sometimes the mail carrier will open it a couple of times to put multiple things in, etc.)
+When the Wyze sensor is opened, this automation checks to make sure that a) the automation hasn’t been fired in the last 2 minutes, and b) the input_boolean entity is “off,” and if either thing is true, it turns on the input_boolean.you_ve_got_mail entity, and then sends an actionable notification (“Mailbox has been opened.”) to an iOS device with the option to reset the sensor. (“It was me”). I have the conditions set so I don’t get a bunch of notifications if it opens a couple of times in a row. (Sometimes my wife and I will both check out of habit when we get home together, or sometimes the mail carrier will open it a couple of times to put multiple things in, etc.)
 
 ```
 # automations.yaml

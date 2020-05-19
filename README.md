@@ -20,7 +20,7 @@ There are two sections that have to be added to configuration.yaml for this trac
 
 ## Template Sensors
 
-First I created a youve_got_mail template sensor which is outputting text based on the state of the input_boolean entity that I created using Helpers. I will create an automation later that will tie the input_boolean entity to the Wyze door sensor, but this is the main component of the mailbox sensor. 
+First I created a youve_got_mail template sensor which is outputting text based on the state of the input_boolean entity that I created using Helpers. I will create an automation later that will tie the input_boolean entity to the Wyze door sensor, but this is the main component of the mailbox sensor. You will also need to enable the time_date sensor if you have not already done so.
 
 ```
 # configuration.yaml
@@ -37,6 +37,16 @@ sensor:
                 No mail today.
             {% endif %}
 
+- platform: time_date
+  display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'date_time_utc'
+      - 'date_time_iso'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
 ```
 ## Actionable Notifications
 

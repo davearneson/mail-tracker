@@ -1,3 +1,4 @@
+
 # Mailbox Sensor
 
 ![Mailbox Sensor](https://i.imgur.com/V2apQt4.jpg)
@@ -183,3 +184,4 @@ type: picture-elements
 ![Mailbox Time Arrived](https://i.imgur.com/4fuMpoK.jpg)
 
 If you click or tap on the mailbox icon on the lovelace card, it will open the Mailbox Time Arrived entity, and show you the date and time the mailbox was last opened without being reset.
+
